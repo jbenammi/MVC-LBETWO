@@ -1,0 +1,11 @@
+
+div.star {
+	display: inline-block;
+	vertical-align: top;
+	width: 40px;
+	height: 40px;
+	background: url("/assets/img/star.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
