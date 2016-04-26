@@ -28,7 +28,7 @@ class Quotable extends CI_Model {
 
 
 	public function get_favorites ($id){
-		$query = "SELECT quotes.id AS quotes_id, quoted_by, quote, posted_by_id, alias FROM quotes  LEFT JOIN favorites ON favorites.quote_id = quotes.id LEFT JOIN users ON favorites.user_id = users.id WHERE favorites.user_id = ?";
+		$query = "SELECT quotes.id AS quotes_id, quoted_by, quote, posted_by_id, alias FROM quotes JOIN users ON users.id = quotes.posted_by_id JOIN favorites ON favorites.quote_id = quotes.id WHERE favorites.user_id = ?";
 		$info = [$id];
 		return $this->db->query($query, $info)->result_array();
 
