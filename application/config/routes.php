@@ -38,16 +38,15 @@
 |
 */
 
-$route['default_controller'] = "Quotables";
-$route['register'] = "Quotables/register";
-$route['signin'] = "Quotables/signin_process";
-$route['logout'] = "Quotables/logout";
-$route['view_quotes/(:num)'] = "Quotables/view_quotes/$1";
-$route['add_to_favorites/(:num)/(:num)'] = "Quotables/add_to_favorites/$1/$2";
-$route['remove_from_favorites/(:num)/(:num)'] = "Quotables/remove_from_favorites/$1/$2";
-$route['new_quote'] = "Quotables/new_quote";
-$route['dashboard']= "Quotables/view_dashboard";
-
+$route['default_controller'] = "quotables";
+$route['register'] = "quotables/register";
+$route['signin'] = "quotables/signin_process";
+$route['logout'] = "quotables/logout";
+$route['view_quotes/(:num)'] = "quotables/view_quotes/$1";
+$route['add_to_favorites/(:num)/(:num)'] = "quotables/add_to_favorites/$1/$2";
+$route['remove_from_favorites/(:num)/(:num)'] = "quotables/remove_from_favorites/$1/$2";
+$route['new_quote'] = "quotables/new_quote";
+$route['dashboard']= "quotables/view_dashboard";
 $route['404_override'] = '';
 
 
