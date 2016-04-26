@@ -27,7 +27,7 @@ class Quotables extends CI_Controller{
 			$add_user = $this->Quotable->add_user($user_info);
 			if ($add_user){
 				$this->session->set_userdata(['logged_info' => $add_user]);
-				redirect("/Quotables/view_dashboard");
+				redirect("/quotables/view_dashboard");
 			}
 			else{
 				$this->session->set_flashdata("login_error", "E-Mail Address is already registered");
@@ -51,7 +51,7 @@ class Quotables extends CI_Controller{
 			$user_signin = $this->Quotable->signin($user_info);
 			if($user_signin) {
 				$this->session->set_userdata(['logged_info' => $user_signin]);
-				redirect('/Quotables/view_dashboard');
+				redirect('/quotables/view_dashboard');
 			}
 			else {
 				$this->session->set_flashdata("login_error", "The E-Mail or Password information is incorrect.");
@@ -72,13 +72,13 @@ class Quotables extends CI_Controller{
 	public function add_to_favorites($user_id, $quote_id){
 		$this->load->model('Quotable');
 		$this->Quotable->add_favorite($user_id, $quote_id);
-		redirect('/Quotables/view_dashboard');
+		redirect('/quotables/view_dashboard');
 	}
 
 	public function remove_from_favorites($user_id, $quote_id){
 		$this->load->model('Quotable');
 		$this->Quotable->remove_favorite($user_id, $quote_id);
-		redirect('/Quotables/view_dashboard');
+		redirect('/quotables/view_dashboard');
 	}
 
 	public function new_quote(){
@@ -99,7 +99,7 @@ class Quotables extends CI_Controller{
 			$this->load->model('Quotable');
 			$new_quote = $this->input->post();
 			$this->Quotable->add_quote($new_quote);
-			redirect('/Quotables/view_dashboard');
+			redirect('/quotables/view_dashboard');
 		}
 	}
 
